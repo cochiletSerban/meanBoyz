@@ -1,0 +1,23 @@
+{
+  "name": "findmesomehoes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start" : "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node" :"8.9.4"
+  },
+  "author": "Serban sefu",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "google-images": "^2.1.0",
+    "lodash": "^4.17.5",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5"
+  }
+}
