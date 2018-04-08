@@ -9,7 +9,7 @@ let db;
 const app = express();
 
 async function sendStar(db) {
-    pornstar = await getStar.getStar(db);
+    let pornstar = await getStar.getStar(db,"name");
     console.log("res is: " + pornstar.name);
     return pornstar;
 }
