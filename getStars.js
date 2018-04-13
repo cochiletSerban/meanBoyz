@@ -23,7 +23,7 @@ module.exports.getStar = async function getStar(stars, mode) {
         let imageUrl = await client.search(q, {size:'xlarge'});
         let pornStar = {
             name: name,
-            url: [imageUrl[0].url, imageUrl[1].url, imageUrl[2].url]
+            //url: imageUrl[0].url
         }
         return pornStar;
     } else 
