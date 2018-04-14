@@ -122,13 +122,34 @@ app.post('/weather', (req, res) => {
 		res.send({
 			temperature: `Temperature right now ${temperature}`,
 			forecast: {
-				Day1: `${summary[0]} Average temperature throughout the day ${temperatureMax[0]}`,
-				Day2: `${summary[1]} Average temperature throughout the day ${temperatureMax[1]}`,
-				Day3: `${summary[2]} Average temperature throughout the day ${temperatureMax[2]}`,
-				Day4: `${summary[3]} Average temperature throughout the day ${temperatureMax[3]}`,
-				Day5: `${summary[4]} Average temperature throughout the day ${temperatureMax[4]}`,
-				Day6: `${summary[5]} Average temperature throughout the day ${temperatureMax[5]}`,
-				Day7: `${summary[6]} Average temperature throughout the day ${temperatureMax[6]}`
+				Day1: {
+					summary: `${summary[0]}`,
+					temperatureHigh: `${temperatureMax[0]}`
+				},
+				Day2: {
+					summary: `${summary[1]}`,
+					temperatureHigh: `${temperatureMax[1]}`
+				},
+				Day3: {
+					summary: `${summary[2]}`,
+					temperatureHigh: `${temperatureMax[2]}`
+				},
+				Day4: {
+					summary: `${summary[3]}`,
+					temperatureHigh: `${temperatureMax[3]}`
+				},
+				Day5: {
+					summary: `${summary[4]}`,
+					temperatureHigh: `${temperatureMax[4]}`
+				},
+				Day6: {
+					summary: `${summary[5]}`,
+					temperatureHigh: `${temperatureMax[5]}`
+				},
+				Day7: {
+					summary: `${summary[6]}`,
+					temperatureHigh: `${temperatureMax[6]}`
+				}
 			}
 		});
 
