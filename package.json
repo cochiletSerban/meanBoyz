@@ -4,11 +4,11 @@
   "description": "",
   "main": "test.js",
   "scripts": {
-    "start" : "node test.js",
+    "start": "node test.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
-    "node" :"8.9.4"
+    "node": "8.9.4"
   },
   "author": "",
   "license": "ISC",
