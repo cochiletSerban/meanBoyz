@@ -42,7 +42,8 @@ app.post('/mizerii', (req, res) => {
 				locatie.push(result.geometry.location.lng);
 				let obj = {
 					name: result.name,
-					location: locatie
+					location: locatie,
+					address: result.vicinity
 				};
 				listRet.push(obj);
 			});
