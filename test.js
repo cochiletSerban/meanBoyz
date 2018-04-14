@@ -1,11 +1,12 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const  cors = require('cors');
 const port = process.env.PORT || 3000;
 
 
 let app = express();
-
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/mizerii', (req, res) => {
