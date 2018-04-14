@@ -9,7 +9,6 @@ let app = express();
 app.use(bodyParser.json());
 
 app.post('/mizerii', (req, res) => {
-
 	let mesaj = {
 
 		text: req.body.text
