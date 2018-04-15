@@ -2,12 +2,63 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const  cors = require('cors');
+const mongoose = require('mongoose');
+
+
 const port = process.env.PORT || 3000;
 
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/UsersDB');
 
 let app = express();
 app.use(cors());
 app.use(bodyParser.json());
+
+let User = mongoose.model('User', {
+	email: {
+		type: String,
+		required: true,
+		minlength: 1,
+		trim: true
+	},
+	password: {
+		type: String,
+		required: true,
+		minlength:1,
+		trim: true
+	},
+	agenda: {
+		default: []
+	}
+});
+
+app.post('/users', (req, res) => {
+	let user = new User({
+		email: req.body.email,
+		password: req.body.password
+	});
+	user.save().then((doc) => {
+		res.send(doc);
+	}, (e) => {
+		res.status(400).send(e);
+	});
+});
+
+app.get('/users/:email/:password', (req, res) => {
+	
+	User.findOne({
+		email: req.params.email,
+		password: req.params.password
+	}).then((user) => {
+		if (! user) {
+			return res.status(404).send('Eroare');
+		}
+		res.send({user});
+
+	}, (e) => {
+		res.status(400).send('Eroare');
+	});
+});
 
 app.post('/mizerii', (req, res) => {
 	
