@@ -146,8 +146,8 @@ app.post('/mizerii', (req, res) => {
 	}
 });
 
-app.get('/cacat', (req, res) => {
-	res.send('Ia ba niste pula de la sefu tau');
+app.get('/test', (req, res) => {
+	res.send('it works');
 });
 
 app.post('/weather', (req, res) => {
